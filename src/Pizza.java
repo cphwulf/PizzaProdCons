@@ -43,7 +43,7 @@ public class Pizza {
         //String output = String.format("%02d %-15s kr. %5.2f", no, name, price);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH:mm");
         String fmTime = time.format(formatter);
-        String output = String.format("%d;%s;%5.2f;%s", no, name, price, time);
+        String output = String.format("%d;%s;%5.2f;%s", no, name, price, fmTime);
         if(ingredients.isEmpty()) return output;
         output += ingredients.get(0);
         for (int i = 1; i < ingredients.size(); i++) {

@@ -15,6 +15,7 @@ public class Main {
     private void runProgram() {
         menu = new ArrayList<>();
         pizzas = new ArrayList<>();
+
         initMenu();
         Thread t = new Thread(new PizzaBaker(pizzas,menu));
         Thread c1 = new Thread(new PizzaCustomer(pizzas,menu, "Kurt"));
@@ -23,6 +24,14 @@ public class Main {
         Thread c4 = new Thread(new PizzaCustomer(pizzas,menu,"Vivi"));
         Thread c5 = new Thread(new PizzaCustomer(pizzas,menu,"Snurre Snup"));
         Thread c6 = new Thread(new PizzaCustomer(pizzas,menu,"Tintin"));
+        Thread bu = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+
+
+            }
+        });
         t.start();
         c1.start();
         c2.start();

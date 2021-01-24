@@ -1,5 +1,6 @@
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,15 +40,15 @@ public class Pizza {
 
     @Override
     public String toString() {
-        String output = String.format("%02d %-15s kr. %5.2f", no, name, price);
+        //String output = String.format("%02d %-15s kr. %5.2f", no, name, price);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH:mm");
+        String fmTime = time.format(formatter);
+        String output = String.format("%d;%s;%5.2f;%s", no, name, price, time);
         if(ingredients.isEmpty()) return output;
-
-        output += "\n  " + ingredients.get(0);
+        output += ingredients.get(0);
         for (int i = 1; i < ingredients.size(); i++) {
             output += ", "+ingredients.get(i);
-
         }
-        output += "\n";
         return output;
     }
 }

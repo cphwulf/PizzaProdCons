@@ -1,9 +1,0 @@
-10;Capriocciosa;61,00;2021-01-24_18:53Tomatsauce|ost|skinke|champignon|oregano
-10;Capriocciosa;61,00;2021-01-24_18:54Tomatsauce|ost|skinke|champignon|oregano
-10;Capriocciosa;61,00;2021-01-24_18:54Tomatsauce|ost|skinke|champignon|oregano
-10;Capriocciosa;61,00;2021-01-24_18:54Tomatsauce|ost|skinke|champignon|oregano
-10;Capriocciosa;61,00;2021-01-24_18:55Tomatsauce|ost|skinke|champignon|oregano
-10;Capriocciosa;61,00;2021-01-24_18:55Tomatsauce|ost|skinke|champignon|oregano
-10;Capriocciosa;61,00;2021-01-24_18:56Tomatsauce|ost|skinke|champignon|oregano
-10;Capriocciosa;61,00;2021-01-24_18:56Tomatsauce|ost|skinke|champignon|oregano
-8;Victoria;61,00;2021-01-24_18:56Tomatsauce|ost|skinke|ananas|champignon|løg|oregano

@@ -29,11 +29,14 @@ public class PizzaCustomer implements Runnable{
     @Override
     public void run() {
         while(true) {
-            System.out.println(TCol.ANSI_BLUE+"Size " + orderHandler.getSize());
+            //kjSystem.out.println(TCol.ANSI_BLUE+"looping customer .." + this.name);
+            //System.out.println(TCol.ANSI_BLUE+"looping customer .." + this.name);
             if (orderHandler.getSize()>0) {
-                int choice = rd.nextInt(orderHandler.getSize());
-                System.out.println(TCol.ANSI_BLUE+"looping customer .." + this.name + " for no " + choice + " for noof pizzas " + orderHandler.getSize());
+                //int choice = rd.nextInt(orderHandler.getSize());
+                int choice = 1+rd.nextInt((menu.size()-2));
+                //System.out.println(TCol.ANSI_BLUE+"looping customer .." + this.name + " for no " + choice + " for noof pizzas " + orderHandler.getSize());
                 try {
+                    //System.out.println(TCol.ANSI_BLUE+"looping customer .." + this.name + " for no " + choice + " for noof pizzas " + orderHandler.getSize());
                     orderHandler.removeFromList(choice);
                 } catch (NoSuchElementException e) {
                     System.out.println(TCol.ANSI_BLUE+e.getMessage());
@@ -53,9 +56,21 @@ public class PizzaCustomer implements Runnable{
 
                  */
                 try {
-                    Thread.sleep(rd.nextInt(2000));
+                    System.out.println(TCol.ANSI_BLUE+"sleeping customer " + Thread.currentThread().getName() );
+                    Thread.sleep(rd.nextInt(2300));
+                    //Thread.sleep(7000);
                 } catch (InterruptedException ie) {
                     ie.printStackTrace();
+                    break;
+                }
+            } else {
+                try {
+                    System.out.println(TCol.ANSI_BLUE+"sleeping customer " + Thread.currentThread().getName() );
+                    Thread.sleep(rd.nextInt(2300));
+                    //Thread.sleep(7000);
+                } catch (InterruptedException ie) {
+                    ie.printStackTrace();
+                    break;
                 }
             }
         }

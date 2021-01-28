@@ -21,21 +21,36 @@ public class PizzaBaker implements Runnable{
 
     public void run() {
         System.out.println(TCol.ANSI_GREEN+"running bakery ..");
+
         while (true) {
-            System.out.println(TCol.ANSI_GREEN+"looping bakery ..");
+
 
             Random random = new Random();
             int choice = random.nextInt(menu.size());
-            System.out.println(TCol.ANSI_GREEN+"Adding " + menu.get(choice).getNo() + ", " + menu.get(choice).getName());
             Pizza pizza = new Pizza(menu.get(choice));
             //pizzas.add(pizza);
-            orderHandler.addPizzaToOrders(pizza);
-            try {
-                //Thread.sleep(random.nextInt(random.nextInt(5000)+1));
-                Thread.sleep(2000);
-            } catch(InterruptedException e) {
-                System.out.println(TCol.ANSI_GREEN+"was interrupted ..");
-                e.printStackTrace();
+            if (orderHandler.getSize() < 12) {
+
+                System.out.println(TCol.ANSI_GREEN+"Adding " + menu.get(choice).getNo() + ", " + menu.get(choice).getName());
+                orderHandler.addPizzaToOrders(pizza);
+                try {
+                    //Thread.sleep(random.nextInt(random.nextInt(5000)+1));
+                    Thread.sleep(1000);
+                } catch(InterruptedException e) {
+                    System.out.println(TCol.ANSI_GREEN+"was interrupted ..");
+                    e.printStackTrace();
+                    break;
+                }
+            } else {
+                try {
+                    Thread.sleep(random.nextInt(random.nextInt(5000)+1));
+                    System.out.println(TCol.ANSI_GREEN+"sleeping bakery ..");
+                } catch(InterruptedException e) {
+                    System.out.println(TCol.ANSI_GREEN+"was interrupted ..");
+                    e.printStackTrace();
+                    break;
+                }
+
             }
         }
     }
